@@ -1,0 +1,2767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dogs with Jobs | Main Ideas & Supporting Details</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: hsl(217, 85%, 55%);
+  --primary-hover: hsl(217, 85%, 48%);
+  --primary-light: hsl(217, 95%, 96%);
+  --primary-dark: hsl(217, 90%, 30%);
+  --success: hsl(142, 70%, 45%);
+  --success-light: hsl(142, 80%, 96%);
+  --success-dark: hsl(142, 80%, 25%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-light: hsl(38, 95%, 96%);
+  --warning-dark: hsl(38, 95%, 25%);
+  --danger: hsl(350, 80%, 55%);
+  --danger-light: hsl(350, 90%, 97%);
+  --danger-dark: hsl(350, 80%, 25%);
+  
+  --ink: hsl(220, 25%, 15%);
+  --muted: hsl(220, 15%, 45%);
+  --bg: hsl(210, 100%, 98%);
+  --card: #ffffff;
+  --line: hsl(214, 30%, 92%);
+  --navy: hsl(220, 50%, 20%);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  
+  --shadow-sm: 0 2px 8px rgba(15, 40, 89, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 40, 89, 0.06);
+  --shadow-lg: 0 16px 40px rgba(15, 40, 89, 0.08);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--bg) 0%, #ffffff 100%);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+/* Header & Progress */
+header {
+  background: linear-gradient(135deg, var(--navy) 0%, #1d4ed8 100%);
+  color: #ffffff;
+  padding: 24px 20px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.headrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dog-avatar {
+  background: rgba(255, 255, 255, 0.15);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  animation: pulse-avatar 2s infinite ease-in-out;
+}
+
+@keyframes pulse-avatar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.title-container {
+  flex: 1;
+}
+
+.title {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.sub {
+  opacity: 0.85;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Stepper Tracker */
+.stepper-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.stepper-progress-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.stepper-steps {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+
+.step-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 99px;
+  transition: var(--transition);
+}
+
+.step-node:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.step-node.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-node.completed {
+  color: #34d399;
+}
+
+.step-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: var(--transition);
+}
+
+.step-node.completed .step-circle {
+  background: #34d399;
+  border-color: #34d399;
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .step-node span {
+    display: none;
+  }
+  .step-node {
+    padding: 6px;
+  }
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Main Area Layout */
+main {
+  padding: 30px 20px 80px;
+}
+
+.section {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+.section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Styling */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--ink);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+/* Styled Note Boxes */
+.hint, .teacher {
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin: 18px 0;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.hint {
+  background: var(--primary-light);
+  border-left: 5px solid var(--primary);
+  color: var(--primary-dark);
+}
+
+.teacher {
+  background: var(--warning-light);
+  border-left: 5px solid var(--warning);
+  color: var(--warning-dark);
+}
+
+.hint-icon, .teacher-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.hint-icon { fill: var(--primary); }
+.teacher-icon { fill: var(--warning); }
+
+/* Layout Grid */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media(max-width: 768px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Interactive MI & SD Cards */
+.card.mi {
+  background: var(--primary-light);
+  border: 2px solid hsl(217, 90%, 85%);
+}
+
+.card.sd {
+  background: var(--success-light);
+  border: 2px solid hsl(142, 80%, 88%);
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 99px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.card.mi .pill {
+  background: hsl(217, 90%, 88%);
+  color: var(--primary-dark);
+}
+
+.card.sd .pill {
+  background: hsl(142, 80%, 88%);
+  color: var(--success-dark);
+}
+
+/* Timeline Layout */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: -24px;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-badge {
+  width: 42px;
+  height: 42px;
+  background: var(--primary-light);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.timeline-content {
+  background: hsl(210, 50%, 98%);
+  border: 1px solid var(--line);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  flex-grow: 1;
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+.btn.secondary {
+  background: #ffffff;
+  color: var(--navy);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn.secondary:hover {
+  background: hsl(210, 50%, 98%);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn.success {
+  background: var(--success);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+}
+
+.btn.success:hover {
+  background: hsl(142, 70%, 40%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.25);
+}
+
+.btn.warning {
+  background: var(--warning);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+}
+
+.btn.warning:hover {
+  background: hsl(38, 92%, 45%);
+  transform: translateY(-2px);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+/* Guided Practice Example styling */
+.example {
+  line-height: 1.8;
+  background: hsl(210, 60%, 99%);
+  border: 1.5px dashed hsl(214, 30%, 80%);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.hl-main {
+  background: hsl(217, 90%, 88%);
+  border-bottom: 2.5px solid var(--primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.hl-support {
+  background: hsl(142, 80%, 88%);
+  border-bottom: 2.5px solid var(--success);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--success-dark);
+}
+
+/* Interactive Questions & Choices */
+.q {
+  border-top: 1px dashed var(--line);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+
+.q-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: var(--transition);
+}
+
+.choice:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  transform: translateX(4px);
+}
+
+.choice-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.choice:hover .choice-radio {
+  border-color: var(--primary);
+}
+
+.choice.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.choice.selected .choice-radio {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.choice.selected .choice-radio::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.choice.correct {
+  background: var(--success-light);
+  border-color: var(--success);
+  color: var(--success-dark);
+}
+
+.choice.correct .choice-radio {
+  border-color: var(--success);
+  background: var(--success);
+}
+
+.choice.correct .choice-radio::after {
+  content: '✓';
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.choice.wrong {
+  background: var(--danger-light);
+  border-color: var(--danger);
+  color: var(--danger-dark);
+}
+
+.choice.wrong .choice-radio {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
+.choice.wrong .choice-radio::after {
+  content: '✕';
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.feedback-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 10px;
+}
+
+.feedback-container.show {
+  max-height: 100px;
+}
+
+.feedback {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feedback.correct {
+  background: var(--success-light);
+  color: var(--success-dark);
+}
+
+.feedback.wrong {
+  background: var(--danger-light);
+  color: var(--danger-dark);
+}
+
+/* Sorting Activity */
+.sortbank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 24px;
+  background: hsl(210, 50%, 98%);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  min-height: 80px;
+}
+
+.chip {
+  background: #ffffff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  cursor: grab;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.chip:active {
+  cursor: grabbing;
+}
+
+.chip.selected {
+  outline: 3px solid var(--primary);
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.3);
+  transform: scale(1.03);
+}
+
+.chip.used {
+  opacity: 0.35;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.drop-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drop {
+  min-height: 180px;
+  border: 2.5px dashed var(--muted);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: hsl(210, 30%, 99%);
+  transition: var(--transition);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drop.over {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.drop.active-target {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  border-style: dashed;
+  animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.2); }
+  70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.drop .chip {
+  cursor: pointer;
+  animation: pop-in 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Custom Interactive Select Cards for MI */
+.custom-card-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mi-option-card {
+  padding: 14px 16px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mi-option-card:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.mi-option-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 700;
+}
+
+.mi-option-card.correct {
+  background: var(--success-light);
+  border-color: var(--success);
+  color: var(--success-dark);
+}
+
+.mi-option-card.wrong {
+  background: var(--danger-light);
+  border-color: var(--danger);
+  color: var(--danger-dark);
+}
+
+.mi-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.mi-option-card.selected .mi-indicator {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.mi-option-card.selected .mi-indicator::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.mi-option-card.correct .mi-indicator {
+  border-color: var(--success);
+  background: var(--success);
+}
+.mi-option-card.correct .mi-indicator::after {
+  content: '✓';
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.mi-option-card.wrong .mi-indicator {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+.mi-option-card.wrong .mi-indicator::after {
+  content: '✕';
+  color: #ffffff;
+  font-weight: 900;
+}
+
+/* Service Dog Type Selector Cards (Step 4) */
+.dog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.dog-select-card {
+  border: 2px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.dog-select-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.dog-select-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+.dog-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: hsl(210, 50%, 96%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.dog-select-card.selected .dog-icon-wrap {
+  background: var(--primary);
+}
+
+.dog-select-card.selected .dog-icon-wrap svg {
+  fill: #ffffff;
+}
+
+.dog-select-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.dog-select-card svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--navy);
+  transition: var(--transition);
+}
+
+/* Writing Inputs */
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.input-with-scaffold {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+input, textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  background: #ffffff;
+  outline: none;
+  transition: var(--transition);
+  color: var(--ink);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Scaffold helpers (Sentence Starters) */
+.scaffold-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.scaffold-btn:hover {
+  background: var(--primary-light);
+}
+
+.scaffold-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.scaffold-panel {
+  display: none;
+  background: hsl(210, 50%, 98%);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-top: 6px;
+  animation: slide-down 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  z-index: 5;
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(-5px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.scaffold-panel h5 {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.scaffold-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.scaffold-chip {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.scaffold-chip:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+/* Split screen Drafting Workspace */
+.workspace {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media(max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar-card {
+  position: sticky;
+  top: 140px; /* adjusted to account for sticky header */
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-bubble {
+  background: hsl(210, 50%, 98%);
+  border-left: 3px solid var(--primary);
+  padding: 10px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 12px;
+}
+
+.note-bubble-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.note-bubble-text {
+  font-size: 0.92rem;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.note-bubble.empty {
+  border-left-color: var(--muted);
+  opacity: 0.6;
+}
+
+.note-bubble.empty .note-bubble-text {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Editor card and writing area */
+.writebox {
+  background: #fffdf6;
+  border: 2px solid hsl(45, 90%, 80%);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.starter {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: hsl(24, 90%, 25%);
+  background: hsl(45, 90%, 93%);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.draft-textarea {
+  min-height: 250px;
+  border-color: hsl(45, 60%, 85%);
+  background: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.draft-textarea:focus {
+  border-color: hsl(45, 90%, 60%);
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.1);
+}
+
+.editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Checklist items */
+.checklist {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.checkrow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: hsl(210, 40%, 98%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  user-select: none;
+}
+
+.checkrow:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  transform: translateX(3px);
+}
+
+.checkrow input {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--muted);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  transition: var(--transition);
+}
+
+.checkrow.checked {
+  background: var(--success-light);
+  border-color: var(--success);
+  color: var(--success-dark);
+}
+
+.checkrow.checked .custom-checkbox {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.checkrow.checked .custom-checkbox::after {
+  content: '✓';
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.score {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* Celebration & Badge Screen */
+.celebrate-card {
+  text-align: center;
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  border: 3px solid hsl(45, 95%, 75%);
+  background: radial-gradient(circle, #ffffff 60%, hsl(45, 90%, 96%) 100%);
+  animation: scale-up 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes scale-up {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.badge-graphic {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.badge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.badge-label {
+  display: inline-block;
+  background: hsl(45, 95%, 90%);
+  color: hsl(45, 95%, 25%);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 15px);
+  background: var(--navy);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 99px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Footer */
+.footer {
+  max-width: 1080px;
+  margin: 30px auto 40px;
+  padding: 0 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(214, 20%, 80%);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(214, 20%, 70%);
+}
+
+/* Print Overrides */
+@media print {
+  header, .stepper-container, .actions, .teacher, .toast, .scaffold-btn, .scaffold-panel, .sidebar-card, .btn {
+    display: none !important;
+  }
+  .section {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    page-break-after: always;
+  }
+  .section:last-of-type {
+    page-break-after: avoid;
+  }
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    page-break-inside: avoid;
+  }
+  body {
+    background: #ffffff;
+    font-size: 12pt;
+  }
+  main {
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="headrow">
+      <div class="dog-avatar" id="headerDogAvatar">🐕‍🦺</div>
+      <div class="title-container">
+        <div class="title">Dogs with Jobs: Main Ideas & Supporting Details</div>
+        <div class="sub">Primary 5 • Read → Identify → Organise → Write</div>
+      </div>
+    </div>
+    
+    <div class="stepper-container">
+      <div class="stepper-progress-bg" id="stepperProgress"></div>
+      <div class="stepper-steps" id="stepperSteps"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- STEP 1: LEARN -->
+  <section class="section" id="step0">
+    <div class="card">
+      <h2>
+        <svg style="width: 24px; height: 24px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        🎯 Learning Goal
+      </h2>
+      <p>By the end of this lesson, you should be able to <b>identify a main idea</b>, <b>find supporting details</b>, and then use them to plan and write a short information paragraph about a service dog.</p>
+      
+      <div class="hint">
+        <svg class="hint-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <div>
+          <b>Remember:</b> A supporting detail must link back to the main idea. It explains the main idea, gives a specific example, or adds key facts.
+        </div>
+      </div>
+    </div>
+    
+    <div class="grid2">
+      <div class="card mi">
+        <span class="pill">Main Idea</span>
+        <h3>What is this part mostly about?</h3>
+        <p>The main idea is the most important point of a paragraph or section. It tells us the overall topic being discussed.</p>
+      </div>
+      <div class="card sd">
+        <span class="pill">Supporting Details</span>
+        <h3>How do I know?</h3>
+        <p>Supporting details explain, describe, give examples, or provide interesting facts that directly support the main idea.</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>🔎 A Useful Reading Routine</h3>
+      <p>Follow these steps whenever you read a text to find key information:</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-badge">1</div>
+          <div class="timeline-content">
+            <h4>Skim the Gist</h4>
+            <p>Skim the title, headings, sub-headings, or the first sentence of a paragraph to understand the general topic.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">2</div>
+          <div class="timeline-content">
+            <h4>Ask the Big Question</h4>
+            <p>Ask yourself: <i>"What is this paragraph mainly telling me?"</i> Look for a sentence that sums it up.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">3</div>
+          <div class="timeline-content">
+            <h4>Scan for Evidence</h4>
+            <p>Scan the rest of the text for specific facts, explanations, or examples that add details about that main idea.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-badge">4</div>
+          <div class="timeline-content">
+            <h4>Check the Connection</h4>
+            <p>Verify: <i>"Does every supporting detail connect back to the main idea?"</i> If a detail doesn't, it might belong elsewhere.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="teacher">
+        <svg class="teacher-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <div>
+          <b>Teacher Tip:</b> Skimming headings helps readers quickly grasp the primary topic, while scanning helps target specific facts without reading every word.
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button class="btn primary" onclick="go(1)">Start Guided Practice &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: GUIDED PRACTICE -->
+  <section class="section" id="step1">
+    <div class="card">
+      <h2>
+        <svg style="width: 24px; height: 24px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        1. Guided Practice: See the Link
+      </h2>
+      <p>Read this short adapted paragraph based on the introduction to <i>Dogs with Jobs</i>. Pay attention to how the sentences link together:</p>
+      
+      <div class="example">
+        <span class="hl-main" title="Main Idea">Dogs make great pets.</span> 
+        <span class="hl-support" title="Supporting Detail">They are loyal and enjoy being around people.</span> 
+        <span class="hl-support" title="Supporting Detail">They can help reduce loneliness and stress.</span> 
+        <span class="hl-support" title="Supporting Detail">Their presence can also make people feel happier.</span>
+      </div>
+      
+      <div class="q">
+        <div class="q-title">Question A: Which sentence gives the main idea?</div>
+        <div class="choices" data-question="guidedA">
+          <button class="choice" data-correct="true">
+            <div class="choice-radio"></div>
+            <span>"Dogs make great pets."</span>
+          </button>
+          <button class="choice">
+            <div class="choice-radio"></div>
+            <span>"They are loyal and enjoy being around people."</span>
+          </button>
+          <button class="choice">
+            <div class="choice-radio"></div>
+            <span>"They can help reduce loneliness and stress."</span>
+          </button>
+        </div>
+        <div class="feedback-container" id="feedback-guidedA">
+          <div class="feedback"></div>
+        </div>
+      </div>
+      
+      <div class="q">
+        <div class="q-title">Question B: Why are the other sentences supporting details?</div>
+        <div class="choices" data-question="guidedB">
+          <button class="choice" data-correct="true">
+            <div class="choice-radio"></div>
+            <span>They explain how or why dogs make great pets.</span>
+          </button>
+          <button class="choice">
+            <div class="choice-radio"></div>
+            <span>They introduce a completely different animal.</span>
+          </button>
+          <button class="choice">
+            <div class="choice-radio"></div>
+            <span>They repeat the exact same sentence again.</span>
+          </button>
+        </div>
+        <div class="feedback-container" id="feedback-guidedB">
+          <div class="feedback"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>💡 Pattern to Notice</h3>
+      <p>Look at how the main idea is supported by multiple detailed facts in a paragraph structure:</p>
+      
+      <div class="grid2">
+        <div class="card mi" style="margin: 0; padding: 20px;">
+          <strong>Main Idea:</strong>
+          <p style="margin-top: 8px; font-weight: 700; font-size: 1.1rem; color: var(--primary-dark);">Dogs make great pets.</p>
+        </div>
+        <div class="card sd" style="margin: 0; padding: 20px;">
+          <strong>Supporting Details:</strong>
+          <ul style="margin-top: 8px; padding-left: 20px; color: var(--success-dark); font-weight: 600;">
+            <li>Dogs are loyal and enjoy human company.</li>
+            <li>They help decrease feelings of loneliness.</li>
+            <li>They lower stress levels.</li>
+            <li>They lift people's overall mood.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button class="btn secondary" onclick="go(0)">&larr; Back to Learn</button>
+        <button class="btn primary" onclick="go(2)">Try It Yourself &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3: SORT & IDENTIFY -->
+  <section class="section" id="step2">
+    <div class="card">
+      <h2>
+        <svg style="width: 24px; height: 24px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+        2. Sort the Supporting Details
+      </h2>
+      <p>Drag or tap each fact card to place it in the correct category based on the service dogs in your Reader. (If you are on a tablet or phone, tap a card first, then tap the target box to move it).</p>
+      
+      <div class="sortbank" id="bank"></div>
+      
+      <div class="grid2">
+        <div class="drop-container">
+          <h3 style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            🛟 USAR Dogs
+          </h3>
+          <div class="drop" data-dog="usar" id="drop-usar"></div>
+        </div>
+        <div class="drop-container">
+          <h3 style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+            <svg style="width: 20px; height: 20px; fill: var(--warning);" viewBox="0 0 24 24"><path d="M12.05 5.23c-1.07-.36-2.22-.55-3.37-.55-2.57 0-4.99.93-6.9 2.57 1.13.25 2.22.75 3.19 1.48L3.2 10.5C2.42 9.69 1.8 8.74 1.34 7.7 1.07 8.74 1 9.84 1 11c0 6.08 4.92 11 11 11 2.37 0 4.56-.75 6.37-2.03.3-.23.63-.44.91-.71.6-.57 1.11-1.24 1.54-1.97.23-.4.44-.82.61-1.26.15-.38.27-.77.38-1.18.23-.9.34-1.84.34-2.8 0-4.08-2.51-7.57-6.07-8.99-.08.62-.26 1.25-.56 1.84-.71 1.4-1.92 2.45-3.39 2.97l-.08.36z"/></svg>
+            🔥 Fire Investigation Dogs
+          </h3>
+          <div class="drop" data-dog="fire" id="drop-fire"></div>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button class="btn success" onclick="checkSorting()">Check My Sorting</button>
+        <button class="btn secondary" onclick="resetSorting()">Reset Activity</button>
+      </div>
+      <div class="feedback-container" id="feedback-sorting-container">
+        <div class="feedback" id="sortFeedback"></div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>🔍 Identify the Correct Main Idea</h3>
+      <p>Now, select the best main idea sentence for each section of the text:</p>
+      
+      <div class="grid2">
+        <div>
+          <label class="label">USAR Dogs Main Idea</label>
+          <div class="custom-card-selector" data-group="usarMI">
+            <div class="mi-option-card" data-val="a">
+              <div class="mi-indicator"></div>
+              <span>USAR dogs locate people trapped in collapsed buildings.</span>
+            </div>
+            <div class="mi-option-card" data-val="b">
+              <div class="mi-indicator"></div>
+              <span>USAR dogs are playful family pets.</span>
+            </div>
+            <div class="mi-option-card" data-val="c">
+              <div class="mi-indicator"></div>
+              <span>USAR dogs assist in investigation after a fire is put out.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <label class="label">Fire Investigation Dogs Main Idea</label>
+          <div class="custom-card-selector" data-group="fireMI">
+            <div class="mi-option-card" data-val="a">
+              <div class="mi-indicator"></div>
+              <span>Fire investigation dogs guide visually impaired people across roads.</span>
+            </div>
+            <div class="mi-option-card" data-val="b">
+              <div class="mi-indicator"></div>
+              <span>Fire investigation dogs help locate substances that may have started a fire.</span>
+            </div>
+            <div class="mi-option-card" data-val="c">
+              <div class="mi-indicator"></div>
+              <span>Fire investigation dogs comfort and cuddle patients in hospitals.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button class="btn primary" onclick="checkMainIdeas()">Check Main Ideas</button>
+        <button class="btn secondary" onclick="go(1)">&larr; Back</button>
+        <button class="btn primary" id="nextToPlannerBtn" onclick="go(3)" disabled style="opacity: 0.5; cursor: not-allowed;">Next: Writing Planner &rarr;</button>
+      </div>
+      <div class="feedback-container" id="feedback-mi-container">
+        <div class="feedback" id="miFeedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 4: WRITING PLANNER -->
+  <section class="section" id="step3">
+    <div class="card">
+      <h2>
+        <svg style="width: 24px; height: 24px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M3 10h11v2H3zm0-2h11v2H3zm0 6h7v2H3zm16-4c.7 0 1.37.1 2 .29V8c0-1.11-.9-2-2-2h-5c0-1.66-1.34-3-3-3S7 4.34 7 6H2c-1.1 0-2 .89-2 2v11c0 1.11.9 2 2 2h9.7c-.45-.9-.7-1.92-.7-3 0-3.31 2.69-6 6-6zm-8-4c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm10.3 8.7l.7-.7c.39-.39.39-1.02 0-1.41l-.7-.7c-.39-.39-1.02-.39-1.41 0l-.7.7 2.1 2.1zM12.5 22H11v-1.5l5.6-5.6 1.5 1.5L12.5 22z"/></svg>
+        3. Writing Task Planner
+      </h2>
+      <p>Now move from <b>reading</b> to <b>planning your writing</b>. Choose one service dog to write about. This will open your planner fields.</p>
+      
+      <label class="label">Select your service dog:</label>
+      <div class="dog-grid" id="dogSelector">
+        <div class="dog-select-card" data-dog="Urban Search-and-Rescue (USAR) dog">
+          <div class="dog-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V7h2v7z"/></svg>
+          </div>
+          <h4>USAR Dog</h4>
+        </div>
+        <div class="dog-select-card" data-dog="Fire investigation dog">
+          <div class="dog-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          </div>
+          <h4>Fire Investigator</h4>
+        </div>
+        <div class="dog-select-card" data-dog="Guide dog">
+          <div class="dog-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+          </div>
+          <h4>Guide Dog</h4>
+        </div>
+        <div class="dog-select-card" data-dog="Therapy dog">
+          <div class="dog-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <h4>Therapy Dog</h4>
+        </div>
+      </div>
+      
+      <input type="hidden" id="dogChoice" value="" />
+    </div>
+    
+    <!-- Planner inputs (shown only when a dog is selected) -->
+    <div id="plannerInputs" style="display: none;">
+      <div class="card">
+        <span class="pill" style="background: var(--primary-light); color: var(--primary-dark);">Main Idea A: The Dog's Work</span>
+        <h3 style="margin-top: 8px;">What type of work does this service dog do?</h3>
+        
+        <div class="input-group">
+          <label class="label">Main Idea Sentence</label>
+          <div class="input-with-scaffold">
+            <input id="workMain" placeholder="E.g., The main job of a USAR dog is to locate survivors..." />
+            <button class="scaffold-btn" onclick="toggleScaffold(this)">
+              <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+              💡 Need a sentence starter?
+            </button>
+            <div class="scaffold-panel">
+              <h5>Click to insert:</h5>
+              <div class="scaffold-list" id="scaffold-workMain"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid2">
+          <div class="input-group">
+            <label class="label">Supporting Detail 1</label>
+            <div class="input-with-scaffold">
+              <textarea id="workD1" placeholder="Provide a specific fact or example of what they do."></textarea>
+              <button class="scaffold-btn" onclick="toggleScaffold(this)">
+                <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+                💡 Supporting phrase?
+              </button>
+              <div class="scaffold-panel">
+                <h5>Click to insert:</h5>
+                <div class="scaffold-list" id="scaffold-workD1"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label class="label">Supporting Detail 2</label>
+            <div class="input-with-scaffold">
+              <textarea id="workD2" placeholder="Add another supporting fact about their work."></textarea>
+              <button class="scaffold-btn" onclick="toggleScaffold(this)">
+                <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+                💡 Supporting phrase?
+              </button>
+              <div class="scaffold-panel">
+                <h5>Click to insert:</h5>
+                <div class="scaffold-list" id="scaffold-workD2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <span class="pill" style="background: var(--success-light); color: var(--success-dark);">Main Idea B: The Dog's Qualities</span>
+        <h3 style="margin-top: 8px;">What special qualities does this service dog need?</h3>
+        
+        <div class="input-group">
+          <label class="label">Main Idea Sentence</label>
+          <div class="input-with-scaffold">
+            <input id="qualMain" placeholder="E.g., A USAR dog requires several specific qualities to do their job..." />
+            <button class="scaffold-btn" onclick="toggleScaffold(this)">
+              <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+              💡 Need a sentence starter?
+            </button>
+            <div class="scaffold-panel">
+              <h5>Click to insert:</h5>
+              <div class="scaffold-list" id="scaffold-qualMain"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid2">
+          <div class="input-group">
+            <label class="label">Qualities Detail 1</label>
+            <div class="input-with-scaffold">
+              <textarea id="qualD1" placeholder="Identify a key quality and explain why they need it."></textarea>
+              <button class="scaffold-btn" onclick="toggleScaffold(this)">
+                <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+                💡 Supporting phrase?
+              </button>
+              <div class="scaffold-panel">
+                <h5>Click to insert:</h5>
+                <div class="scaffold-list" id="scaffold-qualD1"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label class="label">Qualities Detail 2</label>
+            <div class="input-with-scaffold">
+              <textarea id="qualD2" placeholder="Add another quality and explain why it is important."></textarea>
+              <button class="scaffold-btn" onclick="toggleScaffold(this)">
+                <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
+                💡 Supporting phrase?
+              </button>
+              <div class="scaffold-panel">
+                <h5>Click to insert:</h5>
+                <div class="scaffold-list" id="scaffold-qualD2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="actions">
+          <button class="btn success" onclick="savePlan()">Save Plan Details</button>
+          <button class="btn primary" onclick="buildDraftAndGo()">Go to Drafting &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5: DRAFT & REVIEW -->
+  <section class="section" id="step4">
+    <div class="workspace">
+      <!-- Sticky Sidebar Workspace (Left Column) -->
+      <div class="sidebar-card">
+        <div class="sidebar-title">
+          <svg style="width: 20px; height: 20px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          Planner Notes
+        </div>
+        <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 12px;">Refer to your planner notes below while drafting your paragraph:</p>
+        
+        <div id="sidebarNotes">
+          <!-- Dynamic Content generated by JS -->
+        </div>
+      </div>
+      
+      <!-- Interactive Editor Panel (Right Column) -->
+      <div>
+        <div class="card">
+          <h2>
+            <svg style="width: 24px; height: 24px; fill: var(--primary);" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            4. Draft Your Paragraph
+          </h2>
+          <p>Organise your writing clearly. Start with a main idea, follow with supporting details, use the simple present tense for facts, and add rich adjectives.</p>
+          
+          <div class="writebox">
+            <div class="starter">
+              <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              My Information Paragraph
+            </div>
+            <textarea id="draft" class="draft-textarea" oninput="updateWordCount()" placeholder="Begin writing your paragraph here..."></textarea>
+            
+            <div class="editor-footer">
+              <span id="wordCount">0 words</span>
+              <span id="readTime">0 min read</span>
+            </div>
+          </div>
+          
+          <div class="actions" style="margin-top: 12px; padding-top: 12px;">
+            <button class="btn secondary" onclick="autoAssembleDraft()">Auto-Assemble From Notes</button>
+            <button class="btn success" onclick="saveAll()">Save Draft</button>
+            <button class="btn secondary" onclick="copyDraftToClipboard()">Copy Draft</button>
+            <button class="btn secondary" onclick="window.print()">Print Lesson</button>
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3>✅ Writing Checklist</h3>
+          <p>Check off these criteria as you read over and polish your paragraph:</p>
+          
+          <div class="checklist" id="checks">
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>I have a clear main idea sentence at the beginning.</span>
+            </label>
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>I have included supporting details that explain or give examples.</span>
+            </label>
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>My information is logically organised.</span>
+            </label>
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>I use the simple present tense (e.g., "sniffs", "guides", "is").</span>
+            </label>
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>I use suitable adjectives to provide clear descriptions.</span>
+            </label>
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>I have checked my punctuation, spelling, and grammar carefully.</span>
+            </label>
+            <label class="checkrow">
+              <input type="checkbox" onchange="updateChecklistProgress(this)">
+              <div class="custom-checkbox"></div>
+              <span>I can name the source of my information (Reader, websites, etc.).</span>
+            </label>
+          </div>
+          
+          <div class="actions">
+            <button class="btn warning" onclick="checkFinalProgress()">Check Progress & Complete</button>
+          </div>
+          
+          <p class="score" id="scoreDisplay"></p>
+        </div>
+        
+        <!-- CELEBRATION BADGE (Hidden until completion) -->
+        <div class="card celebrate-card hidden" id="doneCard">
+          <div class="badge-graphic">
+            <!-- Animated SVG Gold Star badge -->
+            <svg class="badge-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" fill="hsl(45, 95%, 55%)" />
+              <circle cx="50" cy="50" r="41" fill="hsl(45, 95%, 45%)" />
+              <polygon points="50,15 62,38 88,41 68,58 74,84 50,70 26,84 32,58 12,41 38,38" fill="#ffffff" />
+              <circle cx="50" cy="50" r="16" fill="hsl(45, 95%, 35%)" />
+              <text x="50" y="54" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">★</text>
+            </svg>
+          </div>
+          <div class="badge-label" id="awardBadgeLabel">Certified Biographer</div>
+          <h2 style="color: hsl(45, 95%, 25%); margin-bottom: 8px;">🌟 Mission Complete!</h2>
+          <p style="max-width: 500px; margin: 0 auto 20px;">Outstanding job! You have moved successfully through the writing process: <b>Identify → Sort → Organise → Plan → Write & Review.</b></p>
+          <button class="btn primary" onclick="go(0)">Review the Lesson</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="footer">
+  <div>
+    Lesson design based on the <i>MOE Primary 5 Unit 7 Dogs with Jobs Guidelines</i> and <i>STELLAR Reader</i>.
+  </div>
+  <div>
+    <a href="#" class="footer-link" onclick="localStorage.clear(); toast('Lesson progress reset.'); setTimeout(() => location.reload(), 1000); return false;">Reset All Progress</a>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+  <span id="toastText">Saved</span>
+</div>
+
+<script>
+// Configurations
+const stepLabels = ['1. Learn', '2. Guided Practice', '3. Sort & Identify', '4. Writing Planner', '5. Draft & Review'];
+const stepIds = ['step0', 'step1', 'step2', 'step3', 'step4'];
+const localStorageIds = ['dogChoice', 'workMain', 'workD1', 'workD2', 'qualMain', 'qualD1', 'qualD2', 'draft'];
+
+let currentStep = 0;
+let progressDone = new Set([0]);
+
+// Sentence Starters Database
+const sentenceStarters = {
+  "Urban Search-and-Rescue (USAR) dog": {
+    workMain: [
+      "The primary work of an Urban Search-and-Rescue (USAR) dog is to locate survivors in disaster zones.",
+      "Urban Search-and-Rescue (USAR) dogs are trained to find people trapped under collapsed buildings.",
+      "An Urban Search-and-Rescue (USAR) dog performs critical search missions following emergencies."
+    ],
+    workD1: [
+      "Specifically, they search through collapsed rubble and ruins using their sense of smell.",
+      "For instance, they can detect human scent trapped deep under layers of concrete and wood.",
+      "For example, they navigate dangerous disaster sites where human rescuers cannot safely enter."
+    ],
+    workD2: [
+      "In addition, they use a loud bark to alert their handlers once a survivor is located.",
+      "Furthermore, their speed allows them to cover a large collapse site in just a few minutes.",
+      "This crucial ability saves valuable time and helps rescue teams dig in the exact correct spots."
+    ],
+    qualMain: [
+      "To perform this challenging work, a USAR dog needs several unique physical and mental qualities.",
+      "An effective Urban Search-and-Rescue dog must possess key traits to handle dangerous environments.",
+      "Several specific qualities make a dog suitable for search-and-rescue tasks."
+    ],
+    qualD1: [
+      "First, they need to be highly agile and sure-footed to climb over unstable wreckage.",
+      "One vital quality is bravery, which helps them work calmly around loud noises and dust.",
+      "First and foremost, they must have an exceptionally sensitive nose to detect faint scents."
+    ],
+    qualD2: [
+      "Additionally, they must have a high play drive so they stay motivated by the reward of a toy.",
+      "Furthermore, they need to be friendly and gentle so they do not scare the people they find.",
+      "Also, they require great stamina to work long shifts in difficult weather conditions."
+    ]
+  },
+  "Fire investigation dog": {
+    workMain: [
+      "The primary work of a fire investigation dog is to locate substances that may have started a fire.",
+      "Fire investigation dogs assist investigators by identifying how fires were lit.",
+      "A fire investigation dog performs the critical task of detecting accelerants at fire scenes."
+    ],
+    workD1: [
+      "Specifically, they sniff out tiny traces of ignitable liquids like petrol or lighter fluid.",
+      "For instance, they scan ash and burnt debris to find where chemicals were poured.",
+      "For example, they search fire scenes to pinpoint the exact origin of a blaze."
+    ],
+    workD2: [
+      "By doing this quickly, their accuracy saves investigators hours of manual searching.",
+      "Furthermore, they help gather reliable evidence that can be analyzed in a forensic laboratory.",
+      "This helps the police and fire departments solve crimes and identify arson."
+    ],
+    qualMain: [
+      "A fire investigation dog must have specific qualities to work safely and accurately.",
+      "To be successful, a fire investigator dog needs specialized physical and behavioral traits.",
+      "Several key qualities are necessary for a canine investigator at fire scenes."
+    ],
+    qualD1: [
+      "First, they need an extremely keen sense of smell to pick up tiny scents amidst strong smoke smells.",
+      "One essential quality is obedience, as they must follow precise commands in dangerous ruins.",
+      "First, they must be highly focused and not easily distracted by surrounding chaos."
+    ],
+    qualD2: [
+      "Additionally, they must be light on their paws to avoid stepping on sharp glass or hot embers.",
+      "Furthermore, they need a calm temperament so they do not disrupt delicate physical evidence.",
+      "Also, they need to be eager to work in exchange for food rewards or toy playtime."
+    ]
+  },
+  "Guide dog": {
+    workMain: [
+      "The main job of a guide dog is to assist visually impaired people to travel safely.",
+      "Guide dogs perform the vital work of guiding their owners through public spaces.",
+      "A guide dog acts as the eyes for their handler, helping them lead an independent life."
+    ],
+    workD1: [
+      "For example, they guide their owners around obstacles like street signs and lamp posts.",
+      "Specifically, they help navigate busy pavements, cross roads, and find entrances.",
+      "For instance, they are trained to stop at curbs and wait for their owner's command."
+    ],
+    workD2: [
+      "They can even judge overhead height to make sure their owner does not bump their head.",
+      "Furthermore, they use 'intelligent disobedience' to refuse a command if it is unsafe, such as an oncoming car.",
+      "This allows their handlers to walk confidently and safely in unfamiliar places."
+    ],
+    qualMain: [
+      "To become a guide dog, a canine must possess highly specific qualities and behaviors.",
+      "Several key qualities are needed for a dog to safely guide a human companion.",
+      "A successful guide dog requires a combination of intelligence, calm temperament, and focus."
+    ],
+    qualD1: [
+      "First, they must be exceptionally calm and not easily startled by loud traffic or other animals.",
+      "One vital quality is a gentle and friendly nature, which makes them welcome in public shops.",
+      "First and foremost, they must be extremely obedient and responsive to their handler's voice."
+    ],
+    qualD2: [
+      "In addition, they must show great focus, ignoring food or toys while wearing their working harness.",
+      "Furthermore, they need to be intelligent enough to make safety decisions on behalf of their owner.",
+      "Also, they must be willing to learn and adapt to new routes and routines."
+    ]
+  },
+  "Therapy dog": {
+    workMain: [
+      "The primary work of a therapy dog is to provide comfort and emotional support to people.",
+      "Therapy dogs bring joy, calm, and affection to individuals in stressful environments.",
+      "A therapy dog visits schools, hospitals, and nursing homes to support people's well-being."
+    ],
+    workD1: [
+      "For instance, they sit quietly with patients to help lower their blood pressure and anxiety.",
+      "Specifically, they visit children in schools to help them feel relaxed while reading aloud.",
+      "For example, they offer friendly company to elderly residents in care facilities."
+    ],
+    workD2: [
+      "Their presence helps people open up, communicate, and feel less lonely.",
+      "Furthermore, petting a therapy dog has been shown to reduce stress hormones in the body.",
+      "This physical and emotional connection lifts people's spirits and brightens their day."
+    ],
+    qualMain: [
+      "A successful therapy dog needs unique qualities, focusing mainly on their behavior and attitude.",
+      "To do this comfort work, a dog requires specific traits to interact with many different strangers.",
+      "Several key qualities are necessary for a therapy dog to make visits safe and pleasant."
+    ],
+    qualD1: [
+      "First, they must have a relaxed and friendly nature, showing love to everyone they meet.",
+      "One crucial quality is being extremely gentle, ensuring they do not jump up or snap.",
+      "First and foremost, they must be highly comfortable being hugged and petted by strangers."
+    ],
+    qualD2: [
+      "Additionally, they must be unfazed by unfamiliar equipment like wheelchairs or crutches.",
+      "Furthermore, they need to be quiet and calm, rarely barking or showing signs of nervousness.",
+      "Also, they must be clean, healthy, and highly responsive to basic obedience cues."
+    ]
+  }
+};
+
+// Initial Setup
+window.onload = function() {
+  buildStepper();
+  setupDragAndDrop();
+  setupCustomMISelectors();
+  setupDogCardSelector();
+  loadSavedProgress();
+  go(0);
+};
+
+// Create Stepper Nodes Dynamically
+function buildStepper() {
+  const stepsContainer = document.getElementById('stepperSteps');
+  stepsContainer.innerHTML = '';
+  
+  stepLabels.forEach((label, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'step-node';
+    btn.id = `stepNode${i}`;
+    btn.onclick = () => {
+      // Allow jumping to steps that are unlocked/completed or previous
+      const maxReached = Math.max(...progressDone);
+      if (i <= maxReached + 1) {
+        go(i);
+      } else {
+        toast("Complete the active step to unlock the next one!");
+      }
+    };
+    
+    const circle = document.createElement('div');
+    circle.className = 'step-circle';
+    circle.textContent = i + 1;
+    
+    const text = document.createElement('span');
+    text.textContent = label.split('. ')[1];
+    
+    btn.appendChild(circle);
+    btn.appendChild(text);
+    stepsContainer.appendChild(btn);
+  });
+}
+
+// Stepper navigation and transition logic
+function go(targetIndex) {
+  const currentSection = document.getElementById(stepIds[currentStep]);
+  const targetSection = document.getElementById(stepIds[targetIndex]);
+  
+  // Update active state in stepper progress UI
+  document.querySelectorAll('.step-node').forEach((node, idx) => {
+    node.classList.toggle('active', idx === targetIndex);
+    node.classList.toggle('completed', progressDone.has(idx) && idx !== targetIndex);
+    
+    // update circle content for completed steps with a checkmark
+    const circle = node.querySelector('.step-circle');
+    if (progressDone.has(idx) && idx !== targetIndex) {
+      circle.innerHTML = '✓';
+    } else {
+      circle.innerHTML = idx + 1;
+    }
+  });
+
+  // Calculate and update progress bar
+  const maxStepDone = Math.max(...progressDone, targetIndex);
+  const percent = (maxStepDone / (stepLabels.length - 1)) * 100;
+  document.getElementById('stepperProgress').style.width = percent + '%';
+
+  if (currentStep === targetIndex) {
+    // Initial load
+    targetSection.classList.add('active');
+    setTimeout(() => targetSection.classList.add('fade-in'), 20);
+    updateHeaderAvatar(targetIndex);
+    if (targetIndex === 4) refreshSidebarNotes();
+    return;
+  }
+  
+  // Transition between sections
+  currentSection.classList.remove('fade-in');
+  
+  setTimeout(() => {
+    currentSection.classList.remove('active');
+    
+    targetSection.classList.add('active');
+    setTimeout(() => {
+      targetSection.classList.add('fade-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 20);
+    
+    currentStep = targetIndex;
+    updateHeaderAvatar(targetIndex);
+    if (targetIndex === 4) {
+      refreshSidebarNotes();
+      updateWordCount();
+    }
+  }, 300);
+}
+
+// Header avatar emoji based on step
+function updateHeaderAvatar(stepIndex) {
+  const avatars = ['📚', '✍️', '🧩', '📋', '📝'];
+  const avatarEl = document.getElementById('headerDogAvatar');
+  avatarEl.textContent = avatars[stepIndex] || '🐕‍🦺';
+}
+
+// Guided Practice multiple-choice logic
+document.querySelectorAll('.choices').forEach(group => {
+  const questionId = group.dataset.question;
+  const feedbackContainer = document.getElementById(`feedback-${questionId}`);
+  const feedbackEl = feedbackContainer.querySelector('.feedback');
+  
+  group.querySelectorAll('.choice').forEach(btn => {
+    btn.onclick = () => {
+      // Clear previous states
+      group.querySelectorAll('.choice').forEach(x => x.classList.remove('selected', 'correct', 'wrong'));
+      
+      btn.classList.add('selected');
+      const isCorrect = btn.dataset.correct === 'true';
+      
+      // Apply correct/wrong classes
+      btn.classList.add(isCorrect ? 'correct' : 'wrong');
+      
+      // Feedback display
+      feedbackEl.className = 'feedback ' + (isCorrect ? 'correct' : 'wrong');
+      feedbackEl.innerHTML = isCorrect 
+        ? `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Correct! This sentence clearly presents the main idea for the paragraph.`
+        : `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Try again. Look for the sentence that states the overall point of the entire paragraph.`;
+      
+      feedbackContainer.classList.add('show');
+      
+      if (isCorrect) {
+        checkGuidedCompletion();
+      }
+    };
+  });
+});
+
+function checkGuidedCompletion() {
+  const qA = document.querySelector('.choices[data-question="guidedA"] .choice.correct');
+  const qB = document.querySelector('.choices[data-question="guidedB"] .choice.correct');
+  if (qA && qB) {
+    progressDone.add(1);
+    buildStepper();
+  }
+}
+
+// ----------------------------------------------------
+// SORTING ACTIVITY (DRAG & DROP + TOUCH)
+// ----------------------------------------------------
+const sortingData = [
+  { text: 'USAR dogs locate people trapped under rubble.', key: 'usar' },
+  { text: 'They sniff out human scent.', key: 'usar' },
+  { text: 'They search where buildings have collapsed.', key: 'usar' },
+  { text: 'Fire investigation dogs sniff for ignitable substances.', key: 'fire' },
+  { text: 'They help investigators narrow down where to collect samples.', key: 'fire' },
+  { text: 'Their speed and accuracy save time and resources.', key: 'fire' }
+];
+
+let selectedChipId = null;
+
+function setupDragAndDrop() {
+  const bank = document.getElementById('bank');
+  bank.innerHTML = '';
+  document.querySelectorAll('.drop').forEach(d => d.innerHTML = '');
+  
+  // Randomize sorting chips
+  const shuffledData = [...sortingData].sort(() => Math.random() - 0.5);
+  
+  shuffledData.forEach((item, idx) => {
+    const chip = document.createElement('div');
+    chip.className = 'chip';
+    chip.textContent = item.text;
+    chip.draggable = true;
+    chip.dataset.key = item.key;
+    chip.id = `chip-${idx}`;
+    
+    // Drag events
+    chip.ondragstart = (e) => {
+      e.dataTransfer.setData('text/plain', chip.id);
+      document.querySelectorAll('.drop').forEach(d => d.classList.add('active-target'));
+    };
+    
+    chip.ondragend = () => {
+      document.querySelectorAll('.drop').forEach(d => d.classList.remove('active-target'));
+    };
+    
+    // Touch/Click selection event
+    chip.onclick = (e) => {
+      e.stopPropagation();
+      
+      // If already in a drop box, click moves it back to bank!
+      if (chip.parentElement.classList.contains('drop')) {
+        bank.appendChild(chip);
+        chip.style.borderColor = 'var(--line)';
+        chip.style.background = '#ffffff';
+        chip.style.color = 'var(--ink)';
+        return;
+      }
+      
+      // Select chip
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      selectedChipId = chip.id;
+      document.querySelectorAll('.drop').forEach(d => d.classList.add('active-target'));
+      toast("Tap on a category box below to place this card!");
+    };
+    
+    bank.appendChild(chip);
+  });
+  
+  // Setup drop containers
+  document.querySelectorAll('.drop').forEach(dropZone => {
+    dropZone.ondragover = (e) => {
+      e.preventDefault();
+      dropZone.classList.add('over');
+    };
+    
+    dropZone.ondragleave = () => {
+      dropZone.classList.remove('over');
+    };
+    
+    dropZone.ondrop = (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('over');
+      const id = e.dataTransfer.getData('text/plain');
+      const chip = document.getElementById(id);
+      if (chip) {
+        dropZone.appendChild(chip);
+        // Clear wrong styling if it was check-marked earlier
+        chip.style.borderColor = 'var(--line)';
+        chip.style.background = '#ffffff';
+        chip.style.color = 'var(--ink)';
+      }
+    };
+    
+    // Tap to drop target handler
+    dropZone.onclick = () => {
+      if (selectedChipId) {
+        const chip = document.getElementById(selectedChipId);
+        if (chip) {
+          dropZone.appendChild(chip);
+          chip.classList.remove('selected');
+          chip.style.borderColor = 'var(--line)';
+          chip.style.background = '#ffffff';
+          chip.style.color = 'var(--ink)';
+          selectedChipId = null;
+          document.querySelectorAll('.drop').forEach(d => d.classList.remove('active-target'));
+        }
+      }
+    };
+  });
+  
+  // Clicking outside chips/dropzones clears selection
+  document.body.addEventListener('click', () => {
+    if (selectedChipId) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      document.querySelectorAll('.drop').forEach(d => d.classList.remove('active-target'));
+      selectedChipId = null;
+    }
+  });
+}
+
+function checkSorting() {
+  let allCorrect = true;
+  let totalPlaced = 0;
+  
+  document.querySelectorAll('.drop').forEach(dropZone => {
+    const targetKey = dropZone.dataset.dog;
+    const chipsInDrop = dropZone.querySelectorAll('.chip');
+    
+    chipsInDrop.forEach(chip => {
+      totalPlaced++;
+      const isCorrect = chip.dataset.key === targetKey;
+      
+      if (isCorrect) {
+        chip.style.borderColor = 'var(--success)';
+        chip.style.background = 'var(--success-light)';
+        chip.style.color = 'var(--success-dark)';
+      } else {
+        chip.style.borderColor = 'var(--danger)';
+        chip.style.background = 'var(--danger-light)';
+        chip.style.color = 'var(--danger-dark)';
+        allCorrect = false;
+      }
+    });
+  });
+  
+  const feedbackEl = document.getElementById('sortFeedback');
+  const container = document.getElementById('feedback-sorting-container');
+  
+  if (totalPlaced < sortingData.length) {
+    feedbackEl.className = 'feedback wrong';
+    feedbackEl.innerHTML = `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Place all 6 facts into the boxes first!`;
+    container.classList.add('show');
+  } else if (allCorrect) {
+    feedbackEl.className = 'feedback correct';
+    feedbackEl.innerHTML = `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Well done! Every supporting detail matches its service dog.`;
+    container.classList.add('show');
+    checkAllStep2Activities();
+  } else {
+    feedbackEl.className = 'feedback wrong';
+    feedbackEl.innerHTML = `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Some cards are placed in the wrong box. Re-read the key words on the cards!`;
+    container.classList.add('show');
+  }
+}
+
+function resetSorting() {
+  setupDragAndDrop();
+  document.getElementById('feedback-sorting-container').classList.remove('show');
+}
+
+// Custom interactive select cards for Main Ideas (Step 3)
+let selectedUSAR_MI = null;
+let selectedFire_MI = null;
+
+function setupCustomMISelectors() {
+  document.querySelectorAll('.custom-card-selector[data-group="usarMI"] .mi-option-card').forEach(card => {
+    card.onclick = () => {
+      document.querySelectorAll('.custom-card-selector[data-group="usarMI"] .mi-option-card').forEach(x => {
+        x.classList.remove('selected', 'correct', 'wrong');
+      });
+      card.classList.add('selected');
+      selectedUSAR_MI = card.dataset.val;
+      document.getElementById('feedback-mi-container').classList.remove('show');
+    };
+  });
+  
+  document.querySelectorAll('.custom-card-selector[data-group="fireMI"] .mi-option-card').forEach(card => {
+    card.onclick = () => {
+      document.querySelectorAll('.custom-card-selector[data-group="fireMI"] .mi-option-card').forEach(x => {
+        x.classList.remove('selected', 'correct', 'wrong');
+      });
+      card.classList.add('selected');
+      selectedFire_MI = card.dataset.val;
+      document.getElementById('feedback-mi-container').classList.remove('show');
+    };
+  });
+}
+
+function checkMainIdeas() {
+  const feedbackEl = document.getElementById('miFeedback');
+  const container = document.getElementById('feedback-mi-container');
+  
+  if (!selectedUSAR_MI || !selectedFire_MI) {
+    feedbackEl.className = 'feedback wrong';
+    feedbackEl.innerHTML = `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Please select a main idea for both sections!`;
+    container.classList.add('show');
+    return;
+  }
+  
+  const usarCorrect = selectedUSAR_MI === 'a';
+  const fireCorrect = selectedFire_MI === 'b';
+  
+  // Style cards based on accuracy
+  document.querySelectorAll('.custom-card-selector[data-group="usarMI"] .mi-option-card').forEach(c => {
+    if (c.dataset.val === 'a') c.classList.add('correct');
+    else if (c.classList.contains('selected')) c.classList.add('wrong');
+  });
+  
+  document.querySelectorAll('.custom-card-selector[data-group="fireMI"] .mi-option-card').forEach(c => {
+    if (c.dataset.val === 'b') c.classList.add('correct');
+    else if (c.classList.contains('selected')) c.classList.add('wrong');
+  });
+  
+  if (usarCorrect && fireCorrect) {
+    feedbackEl.className = 'feedback correct';
+    feedbackEl.innerHTML = `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Correct! You have successfully identified the main idea for each service dog section.`;
+    container.classList.add('show');
+    checkAllStep2Activities();
+  } else {
+    feedbackEl.className = 'feedback wrong';
+    feedbackEl.innerHTML = `<svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Some selections are incorrect. Check which statement summarizes the WHOLE section best.`;
+    container.classList.add('show');
+  }
+}
+
+function checkAllStep2Activities() {
+  const sortingComplete = document.getElementById('sortFeedback').className.includes('correct');
+  const miComplete = document.getElementById('miFeedback').className.includes('correct');
+  
+  if (sortingComplete && miComplete) {
+    progressDone.add(2);
+    buildStepper();
+    const nextBtn = document.getElementById('nextToPlannerBtn');
+    nextBtn.removeAttribute('disabled');
+    nextBtn.style.opacity = '1';
+    nextBtn.style.cursor = 'pointer';
+  }
+}
+
+// ----------------------------------------------------
+// STEP 4: WRITING PLANNER ACTIONS
+// ----------------------------------------------------
+function setupDogCardSelector() {
+  document.querySelectorAll('.dog-select-card').forEach(card => {
+    card.onclick = () => {
+      document.querySelectorAll('.dog-select-card').forEach(x => x.classList.remove('selected'));
+      card.classList.add('selected');
+      
+      const chosenDog = card.dataset.dog;
+      document.getElementById('dogChoice').value = chosenDog;
+      
+      // Render sentence starters
+      renderSentenceStarters(chosenDog);
+      
+      // Reveal input fields
+      const inputsPanel = document.getElementById('plannerInputs');
+      inputsPanel.style.display = 'block';
+      
+      saveAll();
+    };
+  });
+}
+
+function renderSentenceStarters(dogType) {
+  const starters = sentenceStarters[dogType];
+  if (!starters) return;
+  
+  // Close any open panels
+  document.querySelectorAll('.scaffold-panel').forEach(p => p.style.display = 'none');
+  
+  const fields = ['workMain', 'workD1', 'workD2', 'qualMain', 'qualD1', 'qualD2'];
+  
+  fields.forEach(field => {
+    const listContainer = document.getElementById(`scaffold-${field}`);
+    listContainer.innerHTML = '';
+    
+    // Choose appropriate starters based on type
+    const fieldType = field.includes('work') ? (field.includes('Main') ? 'workMain' : (field.endsWith('D1') ? 'workD1' : 'workD2'))
+                                             : (field.includes('Main') ? 'qualMain' : (field.endsWith('D1') ? 'qualD1' : 'qualD2'));
+    
+    const phrases = starters[fieldType];
+    
+    phrases.forEach(phrase => {
+      const chip = document.createElement('button');
+      chip.className = 'scaffold-chip';
+      chip.textContent = phrase;
+      chip.type = 'button';
+      chip.onclick = () => {
+        const inputField = document.getElementById(field);
+        
+        // Append or replace
+        if (inputField.value.trim() === '') {
+          inputField.value = phrase;
+        } else {
+          // Append with a space
+          inputField.value = inputField.value.trim() + " " + phrase;
+        }
+        
+        // Close scaffold drawer
+        chip.closest('.scaffold-panel').style.display = 'none';
+        
+        inputField.focus();
+        saveAll();
+      };
+      
+      listContainer.appendChild(chip);
+    });
+  });
+}
+
+function toggleScaffold(btn) {
+  const panel = btn.nextElementSibling;
+  const isVisible = panel.style.display === 'block';
+  
+  // Close all other panels first
+  document.querySelectorAll('.scaffold-panel').forEach(p => p.style.display = 'none');
+  
+  panel.style.display = isVisible ? 'none' : 'block';
+}
+
+function savePlan() {
+  saveAll();
+  progressDone.add(3);
+  buildStepper();
+  toast("Plan details saved successfully!");
+}
+
+function buildDraftAndGo() {
+  savePlan();
+  autoAssembleDraft();
+  go(4);
+}
+
+// ----------------------------------------------------
+// STEP 5: DRAFTING & REVIEW
+// ----------------------------------------------------
+function refreshSidebarNotes() {
+  const sidebar = document.getElementById('sidebarNotes');
+  sidebar.innerHTML = '';
+  
+  const chosenDog = document.getElementById('dogChoice').value || 'Service Dog (Not chosen)';
+  
+  // Display Dog Type Badge
+  const dogBadge = document.createElement('div');
+  dogBadge.className = 'badge-label';
+  dogBadge.style.width = '100%';
+  dogBadge.style.textAlign = 'center';
+  dogBadge.textContent = chosenDog;
+  sidebar.appendChild(dogBadge);
+  
+  const fields = [
+    { id: 'workMain', label: 'Main Idea: Work' },
+    { id: 'workD1', label: 'Detail 1: Work' },
+    { id: 'workD2', label: 'Detail 2: Work' },
+    { id: 'qualMain', label: 'Main Idea: Qualities' },
+    { id: 'qualD1', label: 'Detail 1: Qualities' },
+    { id: 'qualD2', label: 'Detail 2: Qualities' }
+  ];
+  
+  fields.forEach(field => {
+    const val = document.getElementById(field.id).value.trim();
+    const bubble = document.createElement('div');
+    bubble.className = 'note-bubble' + (val === '' ? ' empty' : '');
+    
+    const label = document.createElement('div');
+    label.className = 'note-bubble-title';
+    label.textContent = field.label;
+    
+    const text = document.createElement('div');
+    text.className = 'note-bubble-text';
+    text.textContent = val || 'Not filled';
+    
+    bubble.appendChild(label);
+    bubble.appendChild(text);
+    sidebar.appendChild(bubble);
+  });
+}
+
+function autoAssembleDraft() {
+  const vals = [
+    document.getElementById('workMain').value.trim(),
+    document.getElementById('workD1').value.trim(),
+    document.getElementById('workD2').value.trim(),
+    document.getElementById('qualMain').value.trim(),
+    document.getElementById('qualD1').value.trim(),
+    document.getElementById('qualD2').value.trim()
+  ].filter(Boolean);
+  
+  if (vals.length === 0) {
+    toast("Please enter details in the planner first!");
+    return;
+  }
+  
+  // Join the planner details to form a paragraph
+  document.getElementById('draft').value = vals.join(' ');
+  updateWordCount();
+  saveAll();
+  toast("Planner notes merged into draft!");
+}
+
+function updateWordCount() {
+  const draftText = document.getElementById('draft').value.trim();
+  const words = draftText === '' ? 0 : draftText.split(/\s+/).length;
+  
+  document.getElementById('wordCount').textContent = `${words} word${words !== 1 ? 's' : ''}`;
+  
+  // estimate reading time (avg 200 words per minute)
+  const readTime = Math.ceil(words / 200);
+  document.getElementById('readTime').textContent = `${readTime} min read`;
+}
+
+function updateChecklistProgress(checkbox) {
+  const row = checkbox.closest('.checkrow');
+  row.classList.toggle('checked', checkbox.checked);
+  
+  const checkedCount = document.querySelectorAll('#checks input:checked').length;
+  const totalCheckboxes = document.querySelectorAll('#checks input').length;
+  
+  const scoreDisplay = document.getElementById('scoreDisplay');
+  scoreDisplay.textContent = `You have completed ${checkedCount} of ${totalCheckboxes} checklist items.`;
+  
+  saveAll();
+}
+
+function checkFinalProgress() {
+  const draftVal = document.getElementById('draft').value.trim();
+  const boxes = [...document.querySelectorAll('#checks input')];
+  const checkedCount = boxes.filter(x => x.checked).length;
+  
+  if (draftVal.length === 0) {
+    toast("Write or assemble your paragraph first!");
+    return;
+  }
+  
+  if (checkedCount < boxes.length) {
+    toast(`Make sure to tick all checklist boxes! (${checkedCount}/${boxes.length} complete)`);
+    return;
+  }
+  
+  // Unlock Final Celebrate Card
+  const doneCard = document.getElementById('doneCard');
+  doneCard.classList.remove('hidden');
+  
+  // Set badge name based on chosen dog
+  const chosenDog = document.getElementById('dogChoice').value;
+  let badgeName = "Certified Biographer";
+  if (chosenDog.includes("USAR")) badgeName = "Rescue Dog Specialist";
+  else if (chosenDog.includes("Fire")) badgeName = "Arson Detective";
+  else if (chosenDog.includes("Guide")) badgeName = "Guide Dog Companion";
+  else if (chosenDog.includes("Therapy")) badgeName = "Therapy Handler";
+  
+  document.getElementById('awardBadgeLabel').textContent = badgeName;
+  
+  progressDone.add(4);
+  buildStepper();
+  
+  // Smooth scroll down to celebration card
+  doneCard.scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyDraftToClipboard() {
+  const draft = document.getElementById('draft').value;
+  if (!draft.trim()) {
+    toast("Draft is empty.");
+    return;
+  }
+  navigator.clipboard.writeText(draft);
+  toast("Paragraph copied to clipboard!");
+}
+
+// ----------------------------------------------------
+// SAVING AND LOADING SYNC
+// ----------------------------------------------------
+function saveAll() {
+  try {
+    localStorageIds.forEach(id => {
+      localStorage.setItem('dwj_' + id, document.getElementById(id).value);
+    });
+    
+    // Save progress steps
+    localStorage.setItem('dwj_progress', JSON.stringify([...progressDone]));
+    
+    // Save checklists
+    const checkboxStates = [];
+    document.querySelectorAll('#checks input').forEach((chk, idx) => {
+      checkboxStates.push({ index: idx, checked: chk.checked });
+    });
+    localStorage.setItem('dwj_checklist', JSON.stringify(checkboxStates));
+    
+    toast("Progress saved on this device.");
+  } catch (e) {
+    toast("Local saving not supported in sandbox.");
+  }
+}
+
+function loadSavedProgress() {
+  try {
+    localStorageIds.forEach(id => {
+      const val = localStorage.getItem('dwj_' + id);
+      if (val) {
+        document.getElementById(id).value = val;
+        
+        // Custom actions on load
+        if (id === 'dogChoice' && val !== '') {
+          // highlight selected card
+          document.querySelectorAll('.dog-select-card').forEach(card => {
+            if (card.dataset.dog === val) {
+              card.classList.add('selected');
+            }
+          });
+          document.getElementById('plannerInputs').style.display = 'block';
+          renderSentenceStarters(val);
+        }
+      }
+    });
+    
+    // Load progress steps
+    const progress = localStorage.getItem('dwj_progress');
+    if (progress) {
+      progressDone = new Set(JSON.parse(progress));
+      buildStepper();
+    }
+    
+    // Load checklists
+    const checks = localStorage.getItem('dwj_checklist');
+    if (checks) {
+      const states = JSON.parse(checks);
+      const elements = document.querySelectorAll('#checks input');
+      states.forEach(state => {
+        if (elements[state.index]) {
+          elements[state.index].checked = state.checked;
+          elements[state.index].closest('.checkrow').classList.toggle('checked', state.checked);
+        }
+      });
+      
+      const checkedCount = elements.filter(x => x.checked).length;
+      document.getElementById('scoreDisplay').textContent = `You have completed ${checkedCount} of ${elements.length} checklist items.`;
+    }
+  } catch(e) {
+    console.log("Local storage loading skipped.");
+  }
+}
+
+// Simple toast feedback popup
+function toast(message) {
+  const t = document.getElementById('toast');
+  const txt = document.getElementById('toastText');
+  txt.textContent = message;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+</script>
+</body>
+</html>
