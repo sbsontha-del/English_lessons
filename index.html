@@ -1,19 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>English Learning Hub</title>
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#eef6ff,#fff7ed);color:#172033}.hero{padding:54px 20px 38px;text-align:center;background:#fff}.badge{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(32px,6vw,54px);margin:16px 0 8px}.hero p{max-width:650px;margin:auto;color:#64748b;font-size:18px;line-height:1.6}.wrap{max-width:1050px;margin:auto;padding:38px 20px 60px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.card{background:#fff;border-radius:22px;padding:24px;box-shadow:0 10px 30px rgba(15,23,42,.08);border:1px solid #e5e7eb;min-height:210px;display:flex;flex-direction:column}.icon{font-size:38px}.card h2{margin:13px 0 7px;font-size:21px}.card p{color:#64748b;line-height:1.5;flex:1}.launch{display:inline-block;text-decoration:none;background:#2563eb;color:#fff;padding:11px 16px;border-radius:12px;font-weight:700;text-align:center}.soon{display:inline-block;background:#f1f5f9;color:#64748b;padding:11px 16px;border-radius:12px;font-weight:700;text-align:center}.available{border:2px solid #93c5fd}.footer{text-align:center;color:#94a3b8;font-size:13px;margin-top:34px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primary 5 English Lessons Portal</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
 </head>
-<body>
-<section class="hero"><span class="badge">PRIMARY ENGLISH</span><h1>English Learning Hub</h1><p>Choose a learning area and explore interactive activities for reading, writing, grammar, vocabulary and oral communication.</p></section>
-<main class="wrap"><div class="grid">
-<article class="card available"><div class="icon">📖</div><h2>Reading Comprehension</h2><p>Read, compare and understand texts using interactive activities and guided support.</p><a class="launch" href="reading-comprehension/">Launch Lesson</a></article>
-<article class="card"><div class="icon">✍️</div><h2>Writing</h2><p>Develop ideas, organise compositions and practise effective writing techniques.</p><span class="soon">Lessons coming soon</span></article>
-<article class="card"><div class="icon">🧩</div><h2>Grammar</h2><p>Practise grammar skills through clear examples and self-directed activities.</p><span class="soon">Lessons coming soon</span></article>
-<article class="card"><div class="icon">🔤</div><h2>Vocabulary</h2><p>Build word knowledge and learn to use vocabulary accurately in context.</p><span class="soon">Lessons coming soon</span></article>
-<article class="card"><div class="icon">🎤</div><h2>Oral Communication</h2><p>Practise speaking, responding and organising ideas for oral activities.</p><span class="soon">Lessons coming soon</span></article>
-</div><div class="footer">Interactive English Learning Resources</div></main>
-</body></html>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-10 px-6 shadow-md">
+    <div class="max-w-5xl mx-auto space-y-3">
+      <div class="flex items-center gap-2 text-blue-200 text-xs uppercase font-bold tracking-wider">
+        <span>STELLAR P5 Learning Resources</span>
+        <span>•</span>
+        <span>Interactive Web Lessons</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Primary 5 English Lessons</h1>
+      <p class="text-blue-100 text-sm md:text-base max-w-2xl">
+        Welcome! Explore interactive reading, viewing, and text comparison activities designed for Primary 5 STELLAR readers.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN LESSON CARDS -->
+  <main class="max-w-5xl w-full mx-auto p-6 md:p-10 flex-1 space-y-8">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+      <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        Available Interactive Lessons
+      </h2>
+      <span class="text-xs font-semibold px-3 py-1 bg-blue-100 text-blue-800 rounded-full">2 Lessons Ready</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- LESSON 1 CARD -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col overflow-hidden">
+        <div class="p-6 space-y-4 flex-1">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full">Lesson 1</span>
+            <span class="text-xs font-medium text-slate-500">Reading & Viewing</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Dogs with Jobs</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Interactive activity focusing on Main Ideas & Supporting Details for service dogs (USAR, Fire Investigation, Guide, and Therapy Dogs).
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-500 pt-2">
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Main Ideas</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Supporting Details</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">LS 7.2</span>
+          </div>
+        </div>
+        <div class="p-4 bg-slate-50 border-t border-slate-100">
+          <a href="lesson1_dogs_with_jobs.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-sm transition gap-2">
+            <span>Open Lesson 1</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- LESSON 2 CARD -->
+      <div class="bg-white rounded-2xl border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col overflow-hidden relative">
+        <div class="absolute top-0 right-0 bg-blue-600 text-white font-bold text-[10px] uppercase px-3 py-1 rounded-bl-xl tracking-wider">New</div>
+        <div class="p-6 space-y-4 flex-1">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full">Lesson 2</span>
+            <span class="text-xs font-medium text-slate-500">Dual-Text Comparison</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Martial Arts & Dogs with Jobs</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Multi-activity lesson featuring an <strong>Integrated Dual-Text Reference Reader</strong>, Activity 1 (Comparing Different Texts), and Activity 2 (Service Dog Profiles).
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-500 pt-2">
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Dual Reader</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Text Comparison</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded">Print Summary</span>
+          </div>
+        </div>
+        <div class="p-4 bg-slate-50 border-t border-slate-100">
+          <a href="lesson2_martial_arts_and_dogs.html" class="inline-flex items-center justify-center w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-sm transition gap-2">
+            <span>Open Lesson 2</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-6 px-6 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <span>Primary 5 STELLAR Interactive Lessons</span>
+      <a href="https://github.com/sbsontha-del/English_lessons" target="_blank" class="text-blue-600 hover:underline">GitHub Repository</a>
+    </div>
+  </footer>
+
+</body>
+</html>
